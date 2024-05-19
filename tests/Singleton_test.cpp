@@ -3,7 +3,21 @@
 #include <thread>
 #include <vector>
 
+class Singleton {
+public:
+    static Singleton* getInstance() {
+        if (_instance == nullptr) {
+            _instance = new Singleton();
+        }
+        return _instance;
+    }
 
+private:
+    static Singleton* _instance;
+    Singleton() {
+        std::cout << "singleton..." << std::endl;
+    }
+};
 
 Singleton* Singleton::_instance = nullptr;
 
@@ -51,4 +65,8 @@ TEST(SingletonTest, MultipleInstancesWithoutThreadSafety) {
     ASSERT_NE(sgn2, sgn3);
 }
 
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
 
