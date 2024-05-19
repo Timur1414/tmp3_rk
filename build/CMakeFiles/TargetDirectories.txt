@@ -1,0 +1,4 @@
+/home/ekate/DesignPattern/singleton/build/CMakeFiles/Singleton.dir
+/home/ekate/DesignPattern/singleton/build/CMakeFiles/test.dir
+/home/ekate/DesignPattern/singleton/build/CMakeFiles/edit_cache.dir
+/home/ekate/DesignPattern/singleton/build/CMakeFiles/rebuild_cache.dir
