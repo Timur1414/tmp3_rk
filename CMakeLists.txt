@@ -1,23 +1,23 @@
-cmake_minimum_required(VERSION 3.4)
-project (Singleton)
-set (CMAKE_CXX_STANDARD 11)
-set (CMAKE_CXX_STANDARD_REQUIRED ON)
-set (VERSION_ MAJOR 0)
-set (VERSION_ MINOR 1)
-set (VERSION_ PATCH 0)
-set (VERSION_TWEAK 0)
-set (VERSION\S(VERSION_MAJOR) -S(VERSION_MINOR) -$(VERSION_PATCH) -$(VERSION_TWEAK})
-set (VERSION_STRING "VS(VERSION}")
-option (BUILD_TESTS "Build tests" OFF)
-add_executable (Singleton singleton.cpp)
-1f (BUILD_TESTS)
+cmake_minimum_required(VERSION 3.10)
+
+# Project name
+project(Singleton)
+
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Include directories
+include_directories(${PROJECT_SOURCE_DIR})
+
+# Add source files
+set(SOURCES
+    singleton.cpp
+)
+
+# Add executable
+add_executable(Singleton ${SOURCES})
+
 enable_testing()
-add_subdirectory(third-party/gtest)
-file(GLOB tests "singletion_test/*,cpp")
-foreach(test §(tests))
-add_executable(check $(test))
-target_ link_libraries (check gtest_main gmock_main)
-add_test (NAME check COMMAND check)
-endforeach(test ${tests))
-endif()
-include (CPackConfig-cmake)
+
+add_subdirectory(tests)
