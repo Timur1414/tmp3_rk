@@ -2,7 +2,7 @@
 #include <iostream>
 #include <thread>
 #include <vector>
-#include "../singleton.cpp"
+
 
 
 Singleton* Singleton::_instance = nullptr;
@@ -51,8 +51,4 @@ TEST(SingletonTest, MultipleInstancesWithoutThreadSafety) {
     ASSERT_NE(sgn2, sgn3);
 }
 
-int main(int argc, char** argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
